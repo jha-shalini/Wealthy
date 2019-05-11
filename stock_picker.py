@@ -12,8 +12,12 @@ Created on 11th May, 2019
 import csv
 import sys
 from datetime import datetime, timedelta
-from dateutil.parser import parse
-from time import strptime
+try:
+    from dateutil.parser import parse
+except ModuleNotFoundError:
+    print("Install dateutil version=2.7.3 to run this script")
+    print("exiting")
+    sys.exit()
 import statistics
 import argparse
 

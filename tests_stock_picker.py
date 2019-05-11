@@ -4,12 +4,17 @@ Created on 11th May, 2019
 
 @author: Shalini Jha
 """
-
-import pytest
+import sys
+try:
+    import pytest
+except ModuleNotFoundError:
+    print("Install pytest version=3.2.1 to test this script")
+    print("exiting")
+    sys.exit()
 import stock_picker
 import datetime
-import csv
 import math
+
 
 VALID_CSV_PATH = "tests_data_stock_picker.csv"
 INVALID_CSV_PATH = "invalid_csv.csv"
